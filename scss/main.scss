@@ -1,0 +1,238 @@
+@import 'reset';
+@import 'variable';
+@import 'mixin';
+@import 'grid';
+@import 'font';
+@import 'global'; 
+
+
+
+
+/* HEADER STYLE */
+
+header {
+    min-height: 80px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#brand {
+    display: inline-block;
+    @include media_query($md_scr) {
+        text-align: center;
+        display:block!important;
+    }
+}
+
+nav {
+    float: right;
+    .toggle-menu {
+        display: none;
+        }
+    ul {float: left;}
+    li {
+        display: inline-block;
+        margin-right: 5px;
+        a {
+            color: $dark_color;
+            text-decoration: none;
+            padding: 7px;
+            line-height: 80px;
+            transition: .2s ease;
+            &:hover {
+                background-color: $dark_color;
+                color: $white-color;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $md-scr) {
+    nav {
+        float: none;
+        text-align:center;
+        .toggle-menu {
+            display: block;
+            float: right;    
+        }
+        ul {
+            clear: both;
+            float: none;
+            li {
+                display: block;
+                margin: 25px 0;
+                a {
+                    padding: 10px 35%; 
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+}
+
+/*BANNER SECTION*/
+
+.main-banner {
+    @include center_all;
+    //@include bg_parallax;
+    min-height: calc(100vh - 80px);
+    background:url('../images/banner.jpg');
+    background-color:$dark_color;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    .banner-content {
+     h1 {
+        font-size: 7rem;
+        @include media_query($md_scr) {
+            font-size: 3rem; 
+            }
+        }
+     h2 {
+         width: 70%;
+         margin: 0 auto;
+         @include media_query($md_scr) {
+            font-size: 1.5rem; 
+            }
+        }
+    }
+}
+
+
+#about {
+    background-color: $gray_color;
+    color:$white_color;
+    hr {
+        width: 50px;
+        height: 5px;
+        background: $white_color;
+        display: inline-block;
+    }
+}
+
+
+
+/* Product */ 
+.product-content {
+    i {
+        font-size: 7rem;
+        padding-bottom: 10px;
+    }
+}
+
+
+/* Footer */ 
+
+footer {
+    background-color: $dark_color;
+    color: $white-color;
+    .wrapper {
+        padding: 40px 0;
+        overflow: hidden;
+        ul {
+            @include media_query($md_scr) {
+                float:none;
+                text-align: center;
+            }   
+        }
+        
+        li {
+            display: inline-block;
+            margin: 0 10px;
+            a {
+                color: $white-color;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+
+.section-title {
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+
+
+//SERVICE PAGE
+
+.sub-banner {
+    @include center_all;
+    //@include bg_parallax;
+    min-height: calc(30vh - 80px);
+    background:url('../images/small-banner.jpg');
+    background-color:$dark_color;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    .sub-banner-content{
+        padding: 0 20px;
+    }
+}
+
+.service-wrapper {
+    i {
+        font-size: 3rem;
+        float: left;
+        padding: 0 20px 0 0;
+    }
+}
+
+#service-production {
+    background-color: $gray_color;
+    color: $white_color;
+    .inner-wrapper {
+        padding: 30px;
+        margin-bottom: 50px;
+        .service-subtitle {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+        }
+    }
+}
+
+
+.info-box {
+    i {
+        font-size: 2rem;
+        width: 100px;
+        padding: 30px;
+        color: #fff;
+        background-color: $dark_color;
+        text-align: center;
+        margin-right: 10px;
+    }
+}
+
+.form-wrapper {
+    input, textarea {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid $dark_color;
+        margin-bottom: 5px;
+        outline: none;
+    }
+    button {
+        padding: 15px;
+        background-color: $dark_color;
+        color: #fff;
+        border: none;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+.border-left {border-left: 1px solid $white_color;}
+.border-right {border-right: 1px solid $white_color;}
